@@ -45,6 +45,7 @@
     "core-util-is": "^1.0.2",
     "cross-spawn": "^7.0.3",
     "cypress": "^12.2.0",
+    "cypress-xpath": "^2.0.1",
     "dashdash": "^1.14.1",
     "dayjs": "^1.11.7",
     "debug": "^4.3.4",
@@ -171,5 +172,8 @@
   "bugs": {
     "url": "https://github.com/Sakthiveldeveloper/cypress-automation-framework-learn/issues"
   },
-  "homepage": "https://github.com/Sakthiveldeveloper/cypress-automation-framework-learn#readme"
+  "homepage": "https://github.com/Sakthiveldeveloper/cypress-automation-framework-learn#readme",
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3"
+  }
 }
