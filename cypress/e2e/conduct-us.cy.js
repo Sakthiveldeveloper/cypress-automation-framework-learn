@@ -27,6 +27,37 @@ describe('Test Contact Us form via webdriveri', () => {
 
     })
 
+    //challence 2 (negative scenario)
+    //not able to submit the conduct-us from because of missing the filed
+    it('Should be not able to submit a successful submission via contact us form',() =>{
+        //open the conduct us from webpagess
+        cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html')
+
+        //fill the  firstname 
+        cy.get('[name="first_name"]').type('KaayTest First name')
+
+        //fill the lastname
+        cy.get('[name="last_name"]').type('KaayTest last name')
+
+        //fill the comments
+        cy.get('textarea.feedback-input').type('Kaay comment section')
+
+        //click the submit button
+        cy.get('[type="submit"]').click()
+
+        //click the Reset button
+        // cy.get('[type="reset"]').click();
+
+        // Error: all fields are required
+        // Error: Invalid email address
+
+    })
+
+    //only test the idivitual test use {only} 
+    it.only('Test Particulare test only', ()=>{
+        cy.visit('http://www.google.com/')
+    })
+    //and also {skip} method help to skip particlar test or it block
 
 
 
