@@ -13,6 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+require('@cypress/xpath');  //External plugin for xpath selector npms
 // Import commands.js using ES2015 syntax:
 import './commands'
 
