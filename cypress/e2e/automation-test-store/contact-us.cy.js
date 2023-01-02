@@ -11,8 +11,13 @@ describe('Test Contact Us for via  Automation  Test Store', () =>{
         //clickthe button contact us
         // selectors, css selectors, x-path selectors, cypress-xpath, dynamic selector
         // cy.get('.info_links_footer > :nth-child(5) > a').click() //cypress normal selector
-        cy.get("a[href$='contact']").click()  //dynamic selector,
+        // cy.get("a[href$='contact']").click()  //dynamic selector,
         // cy.xpath("//a[contains(@href, 'contact')]").click();   //xpathselector
+
+        //getname of button with promise , text is j query
+        cy.get("a[href$='contact").click().then(function (buttonText) {
+            console.log("You are click the button name is:",  buttonText.text());
+        })
 
         //fill conductus from page 
         //fillfisrtname
@@ -33,6 +38,10 @@ describe('Test Contact Us for via  Automation  Test Store', () =>{
         //assortion and verify the message
         cy.get('.mb40 > :nth-child(3)').should('have.text','Your enquiry has been successfully sent to the store owner!')
         // cy.get('.mb40 > :nth-child(3)').should('have.text','Your enquiry has been successfully sent to the store owner!2')
+
+        //log comment testing
+
+        cy.log('Testig log')
     })
 
     //visit or open the home page of the automation store
