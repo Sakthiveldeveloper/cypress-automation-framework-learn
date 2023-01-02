@@ -1,0 +1,10 @@
+session17th -->
+in bash 
+
+./node_modules/.bin/cypress run  --> all run
+https://docs.cypress.io/guides/guides/command-line.html
+./node_modules/.bin/cypress run --headed   --> run and open electron browser
+https://docs.cypress.io/guides/guides/command-line.html#Installation
+./node_modules/.bin/cypress run --browser chrome   --> run and open chrome browser
+./node_modules/.bin/cypress run --spec cypress/integration/webdriver-uni/contact-us.js  --> run that particular file(test)
+./node_modules/.bin/cypress run --spec cypress/integration/webdriver-uni/*  --> run  thats folder all files
