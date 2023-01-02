@@ -6,7 +6,15 @@ describe('Test Contact Us form via webdriveri', () => {
     it('Should be able to submit a successful submission via contact us form',() =>{
         //open the conduct us from webpagess
         cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html')
+        
+        //document
+        cy.document().should('have.property', 'charset').and('eq', 'UTF-8')
 
+        //title
+        cy.title().should('include', 'WebDriver | Contact Us')
+
+        //url
+        cy.url().should('include', 'contactus');
         //fill the  firstname 
         cy.get('[name="first_name"]').type('KaayTest First name')
 
