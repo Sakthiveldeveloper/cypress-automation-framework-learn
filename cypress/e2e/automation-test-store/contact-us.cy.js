@@ -29,6 +29,10 @@ describe('Test Contact Us for via  Automation  Test Store', () =>{
 
         //click submit button
         cy.get('.col-md-6 > .btn').click()
+
+        //assortion and verify the message
+        cy.get('.mb40 > :nth-child(3)').should('have.text','Your enquiry has been successfully sent to the store owner!')
+        // cy.get('.mb40 > :nth-child(3)').should('have.text','Your enquiry has been successfully sent to the store owner!2')
     })
 
     //visit or open the home page of the automation store

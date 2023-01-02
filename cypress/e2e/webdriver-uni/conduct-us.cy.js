@@ -25,6 +25,10 @@ describe('Test Contact Us form via webdriveri', () => {
         //click the Reset button
         // cy.get('[type="reset"]').click();
 
+        //assortion and verify the message
+        cy.get('h1').should('have.text', 'Thank You for your Message!');
+        // cy.get('h1').should('have.text', 'Thank You for your Message22!');
+
     })
 
     //challence 2 (negative scenario)
@@ -37,7 +41,7 @@ describe('Test Contact Us form via webdriveri', () => {
         cy.get('[name="first_name"]').type('KaayTest First name')
 
         //fill the lastname
-        cy.get('[name="last_name"]').type('KaayTest last name')
+        // cy.get('[name="last_name"]').type('KaayTest last name')
 
         //fill the comments
         cy.get('textarea.feedback-input').type('Kaay comment section')
@@ -51,12 +55,16 @@ describe('Test Contact Us form via webdriveri', () => {
         // Error: all fields are required
         // Error: Invalid email address
 
+        //contains
+        cy.get('body').contains('Error: all fields are required')
+        // cy.get('body').contains('Error: all fields are required2')
+
     })
 
     //only test the idivitual test use {only} 
-    it.only('Test Particulare test only', ()=>{
-        cy.visit('http://www.google.com/')
-    })
+    // it.only('Test Particulare test only', ()=>{
+    //     cy.visit('http://www.google.com/')
+    // })
     //and also {skip} method help to skip particlar test or it block
 
 
