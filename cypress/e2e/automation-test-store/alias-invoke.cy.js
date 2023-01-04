@@ -14,11 +14,19 @@ describe('Alias and invoke', () => {
         cy.get('@productThumbnail').should('include', 'Seaweed Conditioner')
     })
 
-    it.only('validate Product thumbails',() =>{
+    it('validate Product thumbails',() =>{
         cy.visit("https://www.automationteststore.com/")
         // cy.get('form').find('input').should('not.have.class', 'disabled')
         cy.get('.thumbnail').as('productThumbnail')  //set alias
         cy.get('@productThumbnail').should('have.length', 16)
         cy.get('@productThumbnail').find('.productcart').invoke('attr', 'title').should('include', 'Add to Cart');
+    })
+
+    it.only('calculate total of normal and sale products', () =>{
+        cy.visit("https://www.automationteststore.com/")
+        cy.get('.thumbnail').as('productThumbnail')
+        cy.get('@productThumbnail').find('.oneprice').each(($el, index, $list) =>{
+            cy.log(($el.text()))
+        })
     })
 })
