@@ -88,6 +88,44 @@ describe('Test Contact Us form via webdriveri', () => {
         
     // })
 
+    //handle multiple  tabs
+     it.only('Handle multupkle tabs via Jquery method',() =>{
+        //open the conduct us from webpagess
+        cy.visit('http://www.webdriveruniversity.com')
+        //click contactus button
+        cy.get('#contact-us').invoke('removeAttr', 'target').click({force:true})
+        //document
+        cy.document().should('have.property', 'charset').and('eq', 'UTF-8')
+
+        //title
+        cy.title().should('include', 'WebDriver | Contact Us')
+
+        //url
+        cy.url().should('include', 'contactus');
+        //fill the  firstname 
+        cy.get('[name="first_name"]').type('KaayTest First name')
+
+        //fill the lastname
+        cy.get('[name="last_name"]').type('KaayTest last name')
+        
+        //fil the email
+        cy.get('[name="email"]').type('sakthiveltest@gmail.com')
+
+        //fill the comments
+        cy.get('textarea.feedback-input').type('Kaay comment section')
+
+        //click the submit button
+        cy.get('[type="submit"]').click()
+
+        //click the Reset button
+        // cy.get('[type="reset"]').click();
+
+        //assortion and verify the message
+        cy.get('h1').should('have.text', 'Thank You for your Message!');
+        // cy.get('h1').should('have.text', 'Thank You for your Message22!');
+
+    })
+
 })
 
 
